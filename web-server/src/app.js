@@ -7,6 +7,7 @@ const forecast = require('./utils/forecast');
 const chalk = require('chalk');
 const { response } = require('express');
 const e = require('express');
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'hbs');
 
@@ -62,6 +63,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log(chalk.greenBright.bold('Server is running'));
+app.listen(port, () => {
+    console.log(chalk.greenBright.bold('Server is running on ' + port));
 });
